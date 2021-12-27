@@ -12,8 +12,6 @@
       "nog iets"))
 
 ;;;; en do gebruik je voor het stringen van meerdere commandos
-
-
 (if true
   (do (println "Success!")
       (println "By Zeus's hammer!")
@@ -22,12 +20,6 @@
       "By Aquaman's trident!"))
 
 ;;;; Korte versie van alleen en if met meerdere 'forms'
-
-
-
-
-
-
 (nil? nil)
 (nil? true)
 (if "trueString"
@@ -47,8 +39,6 @@
 (and :feelinggood nil false)
 
 ; Binding a name to a value (NOT ASSIGNING)
-
-
 failed-prot
 93
 1.2
@@ -57,7 +47,6 @@ failed-prot
 
 
 ; Strings
-
 "Lord Voldemore"
 "\"He who must not be name\""
 (def namex "Chewbacca")
@@ -70,8 +59,6 @@ failed-prot
  :keyword2 "lastname"}
 {"string-key" +}
 
-
-
 ;nesting of MAPS 
 {:name {:first "john" :middle "jacob" :last "jingleheidmdersc"}}
 (hash-map :a 1 :b 2)
@@ -83,44 +70,35 @@ failed-prot
 
 
 ; DEF is a best seen as a CONST
-
 (def listms {:a 5 :b 4})
 (def listinlistms {:a 5 :b {:c "ho hum"}})
 listinlistms
 (get-in listinlistms [:b :c])
 
 
-
 ;threat map as a function
-
 ({:name "the hman coffeept"} :name)
 (:name {:name "the hman coffeept"})
 (:name {:name "the hman coffeept" :ohtername "lala"} "again default value")
 
 
 ;;;; vectors
-
 [3 2 1]
 (get [3 2 1] 1)
 ; read a map from a vector
 (get ["a" {:name "pugsley"} "c"] 1)
 
 
-
 ; create vectors with the vecotr function
-
 (vector "creepy" "full" "moon")
 (conj [1 2 3] "addedelement")
 
 
-
 ;;;;;lists
-
 `(1 2 3 4 5)
 (nth `(:a :b :c) 0)
 (nth `(:a :b :c) 2)
 (list 1 "two" {3 4})
-
 
 
 ;; When to use a LIST or a VECTOR: use vector when there is need to easily add elements
@@ -136,7 +114,6 @@ listinlistms
 
 
 ;make SET from VECTOR
-
 (set [1 2 3 4 4 5 3])
 (set [3 3 3 4 4])
 (contains? #{:a :b :c} :a)
@@ -150,9 +127,6 @@ listinlistms
 (get #{nil :a :b} nil)
 
 
-
-
-
 ;;;;;;;;;;;; FUNCTIONS
 ;;;; A function that returns a function
 (or + -)
@@ -161,4 +135,12 @@ listinlistms
 ((first [+ 0]) 1 2 3)
 (1 2 3 4 5) ;numbers an string are no functions
 ("one" 1 2 3 4 5) ;numbers an string are no functions
+
+;; higer-order function take functions as arguments
+(inc 1.1)
+
+; map (A FUNCTION, not a datastructure) applies a function to each member
+(map inc [0 1 2 3 4])
+(map inc #{0 1 2 3 4])
+
 
